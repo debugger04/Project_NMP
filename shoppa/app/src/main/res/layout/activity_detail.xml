@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+ ADD TO CART"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="415dp"
+                android:layout_height="309dp"
+                android:layout_marginTop="90dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_baseline_attach_money_24" />
+
+            <TextView
+                android:id="@+id/txtNamaProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/teko_light"
+                android:text="Nama Product"
+                android:textSize="36sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/txtDescProduk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula mi quis ligula dignissim, vitae dictum urna pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed varius a ante id volutpat. Pellentesque ut tristique felis. Morbi nec lacus et sapien semper aliquet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula mi quis ligula dignissim, vitae dictum urna pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed varius a ante id volutpat. Pellentesque ut tristique felis. Morbi nec lacus et sapien semper aliquet."
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNamaProduk" />
+
+            <TextView
+                android:id="@+id/txtHargaProduk"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Rp. 20.000,-"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescProduk" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

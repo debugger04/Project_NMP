@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/teko_light"
+            android:text="shoppa"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="104dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/green" />
+
+        <TextView
+            android:id="@+id/txtNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Nama Username"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/txtUang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/ic_baseline_attach_money_24"
+            android:fontFamily="@font/montserrat"
+            android:text="Uangnyaaa"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/txtNama" />
+
+        <Button
+            android:id="@+id/btnCart"
+            android:layout_width="128dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="28dp"
+            android:text="Checkout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="226dp" />
+
+        <Button
+            android:id="@+id/btnPoints"
+            android:layout_width="128dp"
+            android:layout_height="78dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="36dp"
+            android:text=" My Points"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_width="128dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/ic_baseline_access_time_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCart" />
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="128dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_baseline_settings_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnHistory" />
+
+        <ImageButton
+            android:id="@+id/btnTopUp"
+            android:layout_width="128dp"
+            android:layout_height="98dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="36dp"
+            android:src="@drawable/ic_baseline_money_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnPoints" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="128dp"
+            android:layout_height="98dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="36dp"
+            android:src="@drawable/ic_baseline_exit_to_app_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnTopUp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
