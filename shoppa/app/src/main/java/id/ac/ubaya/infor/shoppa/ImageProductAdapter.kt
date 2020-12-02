@@ -18,7 +18,7 @@ class ImageProductAdapter(val images:ArrayList<ImageProduct>, val fragment: Home
 
     override fun onBindViewHolder(holder: ImageProductViewHolder, position: Int) {
         val url = images[position].img
-        Picasso.get().load(url).into(holder.v.imageProductView)
+        Picasso.get().load(url).into(holder.v.imageCardView)
     }
 
     override fun getItemCount(): Int {

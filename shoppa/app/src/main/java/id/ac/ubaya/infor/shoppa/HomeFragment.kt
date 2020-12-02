@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -45,10 +46,17 @@ class HomeFragment : Fragment() {
         images.add(ImageProduct("https://www.pngitem.com/pimgs/m/106-1066739_square-clipart-square-object-lego-body-object-mayhem.png"))
 
         val lm:LinearLayoutManager = LinearLayoutManager(this.context)
+        lm.orientation = LinearLayoutManager.HORIZONTAL
         var recyclerView = v.findViewById<RecyclerView>(R.id.sliderView)
         recyclerView?.layoutManager = lm
         recyclerView?.setHasFixedSize(true)
         recyclerView?.adapter = ImageProductAdapter(images, this)
+
+        val gm:GridLayoutManager = GridLayoutManager(this.context,2)
+        var recyclerView2 = v.findViewById<RecyclerView>(R.id.scrollView)
+        recyclerView2?.layoutManager = gm
+        recyclerView2?.setHasFixedSize(true)
+        recyclerView2?.adapter = ProductAdapter(images, this)
 
         Log.d("isi_array", images.toString())
 
