@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/montserrat"
                 android:text="Deskripsi singkat barang"
                 android:textColor="@color/black"
                 android:textSize="16sp"

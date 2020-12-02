@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2020 at 09:12 AM
+-- Generation Time: Dec 02, 2020 at 08:26 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -66,7 +66,8 @@ CREATE TABLE `member` (
 CREATE TABLE `nota` (
   `id` varchar(200) NOT NULL,
   `tgl_order` datetime DEFAULT NULL,
-  `users_id` int(11) NOT NULL
+  `users_id` int(11) NOT NULL,
+  `status` enum('topup','pay') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
