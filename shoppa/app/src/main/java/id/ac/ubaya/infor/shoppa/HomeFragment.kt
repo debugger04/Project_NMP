@@ -23,7 +23,6 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
     var images:ArrayList<ImageProduct> = ArrayList()
     var v:View ?= null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +43,8 @@ class HomeFragment : Fragment() {
         recyclerView?.layoutManager = lm
         recyclerView?.setHasFixedSize(true)
         recyclerView?.adapter = ImageProductAdapter(images)
+
+        Log.d("isi_array", images.toString())
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
