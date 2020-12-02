@@ -24,32 +24,35 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     var images:ArrayList<ImageProduct> = ArrayList()
-    var v:View ?= null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-        images.add(ImageProduct("https://play-lh.googleusercontent.com/IeNJWoKYx1waOhfWF6TiuSiWBLfqLb18lmZYXSgsH1fvb8v1IYiZr5aYWe0Gxu-pVZX3"))
-        images.add(ImageProduct("https://ecdn.teacherspayteachers.com/thumbitem/square-clip-art-free-clip-art-in-preview--2647528-1543003299/original-2647528-3.jpg"))
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        val v = inflater.inflate(R.layout.fragment_home, container, false)
+
+        images.add(ImageProduct("http://play-lh.googleusercontent.com/IeNJWoKYx1waOhfWF6TiuSiWBLfqLb18lmZYXSgsH1fvb8v1IYiZr5aYWe0Gxu-pVZX3"))
+        images.add(ImageProduct("http://ecdn.teacherspayteachers.com/thumbitem/square-clip-art-free-clip-art-in-preview--2647528-1543003299/original-2647528-3.jpg"))
         images.add(ImageProduct("https://www.jing.fm/clipimg/detail/8-84558_square-objects-clipart-3-d-shapes-cube.png"))
         images.add(ImageProduct("https://www.pngitem.com/pimgs/m/84-843413_television-clipart-square-thing-black-and-white-tv.png"))
         images.add(ImageProduct("https://www.clipartkey.com/mpngs/m/11-114922_square-clipart-square-gift-square-gift-box-clipart.png"))
         images.add(ImageProduct("https://www.pngitem.com/pimgs/m/106-1066739_square-clipart-square-object-lego-body-object-mayhem.png"))
 
-        val lm:LinearLayoutManager = LinearLayoutManager(activity)
-        var recyclerView = v?.findViewById<RecyclerView>(R.id.sliderView)
+        val lm:LinearLayoutManager = LinearLayoutManager(this.context)
+        var recyclerView = v.findViewById<RecyclerView>(R.id.sliderView)
         recyclerView?.layoutManager = lm
         recyclerView?.setHasFixedSize(true)
-        recyclerView?.adapter = ImageProductAdapter(images)
+        recyclerView?.adapter = ImageProductAdapter(images, this)
 
         Log.d("isi_array", images.toString())
-    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return v
     }
 
     companion object {
