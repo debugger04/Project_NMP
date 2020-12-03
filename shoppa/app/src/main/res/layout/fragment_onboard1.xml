@@ -18,7 +18,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/shoppatu" />
 
         <TextView
             android:id="@+id/textView"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/teko_light"
-            android:text="Onboarding 1"
+            android:text="Welcome to shoppatu"
             android:textSize="46sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,8 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/montserrat"
-            android:text="Coba dijalankan di emulator lalu lakukan swipe kiri dan kanan untuk mengubah layar di dalam viewpager"
+            android:text="Place where you can find your favorite pair of shoes easy, quick, and safe.\nGuarantee."
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
