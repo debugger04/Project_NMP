@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="236dp"
-            android:layout_height="237dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginTop="92dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,11 +38,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/montserrat"
             android:text="Place where you can find your favorite pair of shoes easy, quick, and safe.\nGuarantee."
             android:textAlignment="center"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />

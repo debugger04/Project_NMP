@@ -12,14 +12,14 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="236dp"
-            android:layout_height="237dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginTop="92dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/onboard3" />
 
         <TextView
             android:id="@+id/textView"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/teko_light"
-            android:text="Onboarding 3"
+            android:text="One touch payment"
             android:textSize="46sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,10 +39,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/montserrat"
-            android:text="Coba dijalankan di emulator lalu lakukan swipe kiri dan kanan untuk mengubah layar di dalam viewpager"
+            android:text="Don't worry about your payment, we promise to give you the best experience of shopping with one touch
+                          payment.\nSecure, Safe, Fast."
+            android:textAlignment="center"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -54,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="36dp"
-            android:text="Lanjut"
+            android:text="get started"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

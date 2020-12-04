@@ -4,13 +4,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/shoppatu"
+        android:label="shoppatu"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shoppa">
         <activity android:name=".SettingsActivity"></activity>
-        <activity android:name=".DetailActivity" />
+        <activity android:name=".DetailActivity" >
+
+        </activity>
         <activity android:name=".TopupActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity" />
