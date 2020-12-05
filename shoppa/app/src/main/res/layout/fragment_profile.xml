@@ -32,7 +32,7 @@
             android:layout_marginTop="104dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/green" />
+            android:src="@drawable/propic" />
 
         <TextView
             android:id="@+id/txtNama"
@@ -59,16 +59,6 @@
             app:layout_constraintStart_toEndOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/txtNama" />
 
-        <Button
-            android:id="@+id/btnCart"
-            android:layout_width="128dp"
-            android:layout_height="78dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="28dp"
-            android:text="Checkout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline7" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline7"
             android:layout_width="wrap_content"
@@ -76,25 +66,17 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="226dp" />
 
-        <Button
-            android:id="@+id/btnPoints"
-            android:layout_width="128dp"
-            android:layout_height="78dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="36dp"
-            android:text=" My Points"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline7" />
-
         <ImageButton
             android:id="@+id/btnHistory"
             android:layout_width="128dp"
             android:layout_height="98dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="36dp"
-            android:src="@drawable/ic_baseline_access_time_24"
+            android:background="#FFFFFFF"
+            android:scaleType="fitCenter"
+            android:src="@drawable/history"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCart" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <ImageButton
             android:id="@+id/btnSettings"
@@ -102,7 +84,9 @@
             android:layout_height="98dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="24dp"
-            android:src="@drawable/ic_baseline_settings_24"
+            android:src="@drawable/settings"
+            android:scaleType="fitCenter"
+            android:background="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnHistory" />
 
@@ -112,9 +96,11 @@
             android:layout_height="98dp"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="36dp"
-            android:src="@drawable/ic_baseline_money_24"
+            android:background="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:src="@drawable/topup"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnPoints" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <ImageButton
             android:id="@+id/imageButton4"
@@ -122,9 +108,43 @@
             android:layout_height="98dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="36dp"
-            android:src="@drawable/ic_baseline_exit_to_app_24"
+            android:src="@drawable/logout"
+            android:scaleType="fitCenter"
+            android:background="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnTopUp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="28dp"
+            android:background="#b8b8b8"
+            android:fontFamily="@font/teko_light"
+            android:gravity="center"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="42sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="36dp"
+            android:background="#b8b8b8"
+            android:fontFamily="@font/teko_light"
+            android:gravity="center"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="42sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
