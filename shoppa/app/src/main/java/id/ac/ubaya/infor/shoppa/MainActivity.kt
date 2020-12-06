@@ -6,9 +6,9 @@ import android.widget.Adapter
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_topup.*
 
 class MainActivity : AppCompatActivity() {
-//    verin
     val fragments:ArrayList<Fragment> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

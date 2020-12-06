@@ -12,39 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/teko_light"
-            android:text="shoppa"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="104dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/propic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/propic" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/montserrat"
             android:text="Nama Username"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtUang"
@@ -64,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="226dp" />
+            app:layout_constraintGuide_begin="141dp" />
 
         <ImageButton
             android:id="@+id/btnHistory"
@@ -72,7 +60,7 @@
             android:layout_height="98dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="36dp"
-            android:background="#FFFFFFF"
+            android:background="#FFFFFF"
             android:scaleType="fitCenter"
             android:src="@drawable/history"
             app:layout_constraintStart_toStartOf="parent"

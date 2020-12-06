@@ -9,10 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shoppa">
-        <activity android:name=".SettingsActivity"></activity>
-        <activity android:name=".DetailActivity" >
-
-        </activity>
+        <activity android:name=".DetailHistoryActivity"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".DetailActivity"></activity>
         <activity android:name=".TopupActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity" />
