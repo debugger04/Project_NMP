@@ -44,6 +44,7 @@ class Onboard3Fragment : Fragment() {
         btnLanjut.setOnClickListener{
             val intent = Intent(activity, LoginActivity::class.java)
             activity?.startActivity(intent)
+            activity?.finish()
         }
     }
 
