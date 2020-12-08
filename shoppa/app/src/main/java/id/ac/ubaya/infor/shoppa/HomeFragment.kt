@@ -1,10 +1,18 @@
 package id.ac.ubaya.infor.shoppa
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +28,9 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    var categories:ArrayList<Category> = ArrayList()
+    var products:ArrayList<Product> = ArrayList()
+    var v:View ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +38,75 @@ class HomeFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        val q1 = Volley.newRequestQueue(activity)
+        val url1 = "http://10.0.2.2/nmp160418083/select_category.php"
+        var stringRequest1 = StringRequest(
+            Request.Method.POST, url1,
+            Response.Listener<String> {
+                Log.d("msg", it)
+                val obj = JSONObject(it)
+                if(obj.getString("result") == "OK") {
+                    val data = obj.getJSONArray("data")
+                    for(i in 0 until data.length()) {
+                        val catObj = data.getJSONObject(i)
+                        val kategori = Category(
+                            catObj.getInt("id"),
+                            catObj.getString("nama"),
+                            catObj.getString("image")
+                        )
+                        categories.add(kategori)
+                    }
+                    updateList()
+                    Log.d("list_category", categories.toString())
+                }
+            },
+            Response.ErrorListener {
+                Log.e("msg", it.message.toString())
+            })
+        q1.add(stringRequest1)
+
+        val q2 = Volley.newRequestQueue(activity)
+        val url2 = "http://10.0.2.2/nmp160418083/select_product.php"
+        var stringRequest2 = StringRequest(
+            Request.Method.POST, url2,
+            Response.Listener<String> {
+                Log.d("msg", it)
+                val obj = JSONObject(it)
+                if(obj.getString("result") == "OK") {
+                    val data = obj.getJSONArray("data")
+                    for(i in 0 until data.length()) {
+                        val prodObj = data.getJSONObject(i)
+                        val produk = Product(
+                            prodObj.getInt("id"),
+                            prodObj.getString("nama"),
+                            prodObj.getInt("harga"),
+                            prodObj.getString("deskripsi"),
+                            prodObj.getInt("likes"),
+                            prodObj.getString("image")
+                        )
+                        products.add(produk)
+                    }
+                    Log.d("list_produk", products.toString())
+                }
+            },
+            Response.ErrorListener {
+                Log.e("msg", it.message.toString())
+            })
+        q2.add(stringRequest2)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        v = inflater.inflate(R.layout.fragment_home, container, false)
+        return v
+    }
+
+    fun updateList() {
+        val lm:LinearLayoutManager = LinearLayoutManager(activity)
+        var recyclerView = v?.findViewById<RecyclerView>(R.id.recycler_category)
+        recyclerView?.layoutManager = lm
+        recyclerView?.setHasFixedSize(true)
+        recyclerView?.adapter = CategoryAdapter(categories, this.activity)
     }
 
     companion object {
