@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.layout_product_slider_home.view.*
 
-class CategoryAdapter(var categories: ArrayList<Category>, var activity: Activity):RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
-    class CategoryViewHolder(var v: View, var activity:Activity):RecyclerView.ViewHolder(v)
+class CategoryAdapter(var categories: ArrayList<Category>, val fragment: HomeFragment):RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+    class CategoryViewHolder(var v: View, val fragment: HomeFragment):RecyclerView.ViewHolder(v)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val inflater = LayoutInflater.from(parent.context)
