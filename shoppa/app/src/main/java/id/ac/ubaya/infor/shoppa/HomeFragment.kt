@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -87,6 +88,7 @@ class HomeFragment : Fragment() {
                         )
                         products.add(produk)
                     }
+                    updateList()
                     Log.d("list_produk", products.toString())
                 }
             },
@@ -109,11 +111,14 @@ class HomeFragment : Fragment() {
         recyclerView?.layoutManager = lm
         recyclerView?.setHasFixedSize(true)
         recyclerView?.adapter = CategoryAdapter(categories, this)
-//        val gm: GridLayoutManager = GridLayoutManager(this.context,2)
-//        var recyclerView2 = v.findViewById<RecyclerView>(R.id.scrollView)
-//        recyclerView2?.layoutManager = gm
-//        recyclerView2?.setHasFixedSize(true)
-//        recyclerView2?.adapter = ProductAdapter(images, this)
+    }
+
+    fun updateList() {
+        val sg:StaggeredGridLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        var recyclerView2 = v?.findViewById<RecyclerView>(R.id.recycler_product)
+        recyclerView2?.layoutManager = sg
+        recyclerView2?.setHasFixedSize(true)
+        recyclerView2?.adapter = HomeProductAdapter(products, this)
     }
 
     companion object {
