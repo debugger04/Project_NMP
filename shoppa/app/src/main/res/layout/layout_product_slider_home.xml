@@ -26,27 +26,32 @@
             <ImageView
                 android:id="@+id/imgView"
                 android:layout_width="0dp"
-                android:layout_height="250dp"
+                android:layout_height="0dp"
                 android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <TextView
-                android:id="@+id/txtView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/btnCategory"
+                android:layout_width="100dp"
+                android:layout_height="24dp"
                 android:background="@drawable/radius"
-                android:fontFamily="@font/montserrat_bold"
-                android:paddingStart="24dp"
+                android:fontFamily="@font/montserrat"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                android:paddingStart="6dp"
+                android:paddingLeft="0dp"
                 android:paddingTop="6dp"
-                android:paddingEnd="24dp"
+                android:paddingEnd="6dp"
+                android:paddingRight="0dp"
                 android:paddingBottom="6dp"
-                android:text="HOT"
-                android:textColor="@color/white"
-                android:textSize="14sp"
+                android:text="Button"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

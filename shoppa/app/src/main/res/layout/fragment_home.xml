@@ -14,6 +14,7 @@
             android:id="@+id/recycler_product"
             android:layout_width="match_parent"
             android:layout_height="480dp"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recycler_category" />

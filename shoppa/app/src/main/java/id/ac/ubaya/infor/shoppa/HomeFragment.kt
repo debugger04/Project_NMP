@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -56,7 +57,7 @@ class HomeFragment : Fragment() {
                         )
                         categories.add(kategori)
                     }
-                    updateList()
+                    updateSlider()
                     Log.d("list_category", categories.toString())
                 }
             },
@@ -101,13 +102,18 @@ class HomeFragment : Fragment() {
         return v
     }
 
-    fun updateList() {
+    fun updateSlider() {
         val lm:LinearLayoutManager = LinearLayoutManager(activity)
-        
+        lm.orientation = LinearLayoutManager.HORIZONTAL
         var recyclerView = v?.findViewById<RecyclerView>(R.id.recycler_category)
         recyclerView?.layoutManager = lm
         recyclerView?.setHasFixedSize(true)
         recyclerView?.adapter = CategoryAdapter(categories, this)
+//        val gm: GridLayoutManager = GridLayoutManager(this.context,2)
+//        var recyclerView2 = v.findViewById<RecyclerView>(R.id.scrollView)
+//        recyclerView2?.layoutManager = gm
+//        recyclerView2?.setHasFixedSize(true)
+//        recyclerView2?.adapter = ProductAdapter(images, this)
     }
 
     companion object {

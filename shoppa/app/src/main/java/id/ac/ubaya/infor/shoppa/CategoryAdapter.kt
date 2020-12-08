@@ -20,7 +20,7 @@ class CategoryAdapter(var categories: ArrayList<Category>, val fragment: HomeFra
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val url = categories[position].image
         Picasso.get().load(url).into(holder.v.imgView)
-        holder.v.txtView.text = categories[position].nama
+        holder.v.btnCategory.text = categories[position].nama
     }
 
     override fun getItemCount(): Int {
