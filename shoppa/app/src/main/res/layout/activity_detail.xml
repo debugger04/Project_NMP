@@ -7,12 +7,15 @@
     tools:context=".DetailActivity">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/addToCartBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:text="+ ADD TO CART"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -33,9 +36,9 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="415dp"
-                android:layout_height="309dp"
-                android:layout_marginTop="90dp"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_baseline_attach_money_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +52,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/teko_light"
                 android:text="Nama Product"
-                android:textSize="36sp"
+                android:textSize="40sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -61,7 +64,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="12dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula mi quis ligula dignissim, vitae dictum urna pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed varius a ante id volutpat. Pellentesque ut tristique felis. Morbi nec lacus et sapien semper aliquet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula mi quis ligula dignissim, vitae dictum urna pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed varius a ante id volutpat. Pellentesque ut tristique felis. Morbi nec lacus et sapien semper aliquet."
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula mi quis ligula dignissim, vitae dictum urna pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed varius a ante id volutpat. Pellentesque ut tristique felis"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -70,13 +73,15 @@
             <TextView
                 android:id="@+id/txtHargaProduk"
                 android:layout_width="wrap_content"
-                android:layout_height="85dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="12dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="Rp. 20.000,-"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtDescProduk" />
 
