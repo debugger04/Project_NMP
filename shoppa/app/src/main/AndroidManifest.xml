@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.ac.ubaya.infor.shoppa">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@drawable/shoppatu"
         android:label="shoppatu"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Shoppa">
-        <activity android:name=".DetailHistoryActivity"></activity>
+        android:theme="@style/Theme.Shoppa"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".DetailOrderActivity"></activity>
+        <activity android:name=".CategoryProductActivity" />
+        <activity android:name=".DetailHistoryActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
         <activity android:name=".TopupActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity" />
