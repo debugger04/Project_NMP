@@ -14,7 +14,7 @@ class CategoryAdapter(var categories: ArrayList<Category>, val fragment: HomeFra
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         var v = inflater.inflate(R.layout.layout_product_slider_home, parent,false)
-        return CategoryViewHolder(v, activity)
+        return CategoryViewHolder(v, fragment)
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {

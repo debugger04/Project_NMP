@@ -103,10 +103,11 @@ class HomeFragment : Fragment() {
 
     fun updateList() {
         val lm:LinearLayoutManager = LinearLayoutManager(activity)
+        
         var recyclerView = v?.findViewById<RecyclerView>(R.id.recycler_category)
         recyclerView?.layoutManager = lm
         recyclerView?.setHasFixedSize(true)
-        recyclerView?.adapter = CategoryAdapter(categories, this.activity)
+        recyclerView?.adapter = CategoryAdapter(categories, this)
     }
 
     companion object {
