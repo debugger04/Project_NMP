@@ -1,14 +1,23 @@
 package id.ac.ubaya.infor.shoppa
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_cart.*
+import kotlinx.android.synthetic.main.layout_product_cart.view.*
 import kotlinx.android.synthetic.main.layout_product_home.view.*
+import org.json.JSONObject
 import java.text.NumberFormat
 
 class HomeProductAdapter(var products: ArrayList<Product>, val fragment: HomeFragment):
@@ -16,6 +25,7 @@ class HomeProductAdapter(var products: ArrayList<Product>, val fragment: HomeFra
     class HomeProductViewHolder(var v: View, val fragment: HomeFragment):RecyclerView.ViewHolder(v)
 
     val PRODUCT_ID = ""
+    val USER_ID = ""
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeProductViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -32,7 +42,30 @@ class HomeProductAdapter(var products: ArrayList<Product>, val fragment: HomeFra
         holder.v.productPrice.text = "Rp " + price
 
         holder.v.btnAddToCart.setOnClickListener {
-            Toast.makeText(this.fragment.context, "This is button add to cart", Toast.LENGTH_SHORT).show()
+            val q = Volley.newRequestQueue(fragment.context)
+            val url = "http://10.0.2.2/nmp160418083/add_to_cart.php"
+            val stringRequest = object: StringRequest(
+                Request.Method.POST, url,
+                Response.Listener {
+                    val obj = JSONObject(it)
+                    if(obj.getString("result") == "OK") {
+                        Toast.makeText(fragment.context, "Item has been added to cart !", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                Response.ErrorListener {
+                    Log.d("cekparams", it.message.toString()) }
+            )
+            {
+                override fun getParams(): MutableMap<String, String> {
+                    val params = HashMap<String, String>()
+                    var sharedFile = "id.ac.ubaya.infor.shoppa"
+                    var shared: SharedPreferences = fragment.context!!.getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+                    params["id_user"] = shared.getInt(USER_ID, 0).toString()
+                    params["id_prod"] = products[position].id.toString()
+                    return params
+                }
+            }
+            q.add(stringRequest)
         }
 
         holder.v.btnDetail.setOnClickListener {

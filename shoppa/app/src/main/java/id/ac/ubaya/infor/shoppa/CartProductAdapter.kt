@@ -34,6 +34,7 @@ class CartProductAdapter(var products: ArrayList<Product>, val fragment: CartFra
         holder.v.txtNamaBarang.text = products[position].nama
         holder.v.txtDeskripsi.text = products[position].deskripsi
         holder.v.txtJmlItem.text = products[position].qty.toString()
+        holder.v.txtHargaAsli.text = "Rp " + NumberFormat.getInstance().format(products[position].harga)
         var subtotal = products[position].qty * products[position].harga
         holder.v.txtSubtotal.text = "Rp " + NumberFormat.getInstance().format(subtotal)
 

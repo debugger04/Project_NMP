@@ -144,11 +144,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="Subtotal :"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtSubtotal"
+                app:layout_constraintStart_toEndOf="@+id/imgCardView"
+                app:layout_constraintTop_toBottomOf="@+id/txtHargaAsli" />
+
+            <TextView
+                android:id="@+id/txtHargaAsli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Rp 50,000"
                 app:layout_constraintStart_toEndOf="@+id/imgCardView"
                 app:layout_constraintTop_toBottomOf="@+id/txtDeskripsi" />
 
