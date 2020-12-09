@@ -122,7 +122,8 @@
                     android:id="@+id/new_pass_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat" />
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -144,7 +145,8 @@
                     android:id="@+id/new_pass_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat" />
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -181,7 +183,8 @@
                     android:id="@+id/old_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat" />
+                    android:fontFamily="@font/montserrat"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 

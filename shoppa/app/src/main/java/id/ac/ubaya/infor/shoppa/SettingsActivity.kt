@@ -36,6 +36,7 @@ class SettingsActivity : AppCompatActivity() {
                         val obj = JSONObject(it)
                         if(obj.getString("result") == "OK") {
                             Toast.makeText(this, "Username has been successfully changed", Toast.LENGTH_SHORT).show()
+                            finish()
                         }
                     },
                     Response.ErrorListener {
@@ -58,7 +59,43 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         btnChangePass.setOnClickListener {
-
+            if (new_pass_1.text.toString() != "" && new_pass_2.text.toString() != "") {
+                if (new_pass_1.text.toString() == new_pass_2.text.toString()) {
+                    val q = Volley.newRequestQueue(this)
+                    val url = "http://10.0.2.2/nmp160418083/update_password.php"
+                    val stringRequest = object: StringRequest(
+                        Request.Method.POST, url,
+                        Response.Listener {
+                            val obj = JSONObject(it)
+                            if(obj.getString("result") == "OK") {
+                                Toast.makeText(this, "Password has been successfully changed", Toast.LENGTH_SHORT).show()
+                                finish()
+                            } else {
+                                Toast.makeText(this, "Old password did not match !", Toast.LENGTH_SHORT).show()
+                            }
+                        },
+                        Response.ErrorListener {
+                            Log.d("cekparams", it.message.toString()) }
+                    )
+                    {
+                        override fun getParams(): MutableMap<String, String> {
+                            val params = HashMap<String, String>()
+                            var sharedFile = "id.ac.ubaya.infor.shoppa"
+                            var shared: SharedPreferences = getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+                            params["id_user"] = shared.getInt(USER_ID, 0).toString()
+                            params["old_pass"] = old_pass.text.toString()
+                            params["new_pass"] = new_pass_1.text.toString()
+                            return params
+                        }
+                    }
+                    q.add(stringRequest)
+                } else {
+                    Toast.makeText(this, "New Password does not match its confirmation", Toast.LENGTH_SHORT).show()
+                }
+            }
+            else {
+                Toast.makeText(this, "New Password cannot be empty !", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
