@@ -1,6 +1,8 @@
 package id.ac.ubaya.infor.shoppa
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,6 +24,7 @@ class Onboard3Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    val USER_ID = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +45,18 @@ class Onboard3Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnLanjut.setOnClickListener{
-            val intent = Intent(activity, LoginActivity::class.java)
-            activity?.startActivity(intent)
-            activity?.finish()
+            var sharedFile = "id.ac.ubaya.infor.shoppa"
+            var shared: SharedPreferences = activity!!.getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+            var curr = shared.getInt(USER_ID, 0)
+            if (curr != 0) {
+                val intent = Intent(activity, MainActivity::class.java)
+                activity?.startActivity(intent)
+                activity?.finish()
+            } else {
+                val intent = Intent(activity, LoginActivity::class.java)
+                activity?.startActivity(intent)
+                activity?.finish()
+            }
         }
     }
 

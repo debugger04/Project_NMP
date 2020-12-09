@@ -1,14 +1,22 @@
 package id.ac.ubaya.infor.shoppa
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_onboard3.*
-import kotlinx.android.synthetic.main.fragment_onboard3.btnLanjut
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_profile.*
+import org.json.JSONObject
+import java.text.NumberFormat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +32,7 @@ class ProfileFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    val USER_ID = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +40,42 @@ class ProfileFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        val q = Volley.newRequestQueue(activity)
+        val url = "http://10.0.2.2/nmp160418083/select_profile.php"
+        val stringRequest = object: StringRequest(
+            Request.Method.POST, url,
+            Response.Listener {
+                val obj = JSONObject(it)
+                if(obj.getString("result") == "OK") {
+                    val data = obj.getJSONArray("data")
+                    for(i in 0 until data.length()) {
+                        val prodObj = data.getJSONObject(i)
+                        Picasso.get().load(prodObj.getString("image")).into(imgProfile)
+                        var saldo = NumberFormat.getInstance().format(prodObj.getInt("saldo"))
+                        txtUang.text = "Rp " + saldo
+                        txtNama.text = prodObj.getString("username")
+                        txtMember.text = "Member : " + prodObj.getString("jenis")
+                        var checkout = NumberFormat.getInstance().format(prodObj.getInt("checkout"))
+                        count_checkout.text = checkout.toString()
+                        count_points.text = prodObj.getString("poin")
+                    }
+                }
+                Log.d("cekparams", obj.toString())
+            },
+            Response.ErrorListener {
+                Log.d("cekparams", it.message.toString()) }
+        )
+        {
+            override fun getParams(): MutableMap<String, String> {
+                val params = HashMap<String, String>()
+                var sharedFile = "id.ac.ubaya.infor.shoppa"
+                var shared: SharedPreferences = activity!!.getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+                params["id_user"] = shared.getInt(USER_ID, 0).toString()
+                return params
+            }
+        }
+        q.add(stringRequest)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

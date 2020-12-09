@@ -1,6 +1,8 @@
 package id.ac.ubaya.infor.shoppa
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,6 +22,7 @@ import org.json.JSONObject
 import java.text.NumberFormat
 
 class LoginActivity : AppCompatActivity() {
+    val USER_ID = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -33,6 +36,17 @@ class LoginActivity : AppCompatActivity() {
                     Log.d("msg", it)
                     val obj = JSONObject(it)
                     if(obj.getString("result") == "OK") {
+                        val data = obj.getJSONArray("data")
+                        var get_id_user = 0
+                        for(i in 0 until data.length()) {
+                            val userObj = data.getJSONObject(i)
+                            get_id_user = userObj.getInt("id")
+                        }
+                        var sharedFile = "id.ac.ubaya.infor.shoppa"
+                        var shared:SharedPreferences = getSharedPreferences(sharedFile, Context.MODE_PRIVATE )
+                        var editor:SharedPreferences.Editor = shared.edit()
+                        editor.putInt(USER_ID, get_id_user)
+                        editor.apply()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
