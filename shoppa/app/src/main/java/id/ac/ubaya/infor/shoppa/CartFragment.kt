@@ -1,6 +1,7 @@
 package id.ac.ubaya.infor.shoppa
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -50,6 +51,14 @@ class CartFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         v = inflater.inflate(R.layout.fragment_cart, container, false)
         return v
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btnCheckout.setOnClickListener {
+            val intent = Intent(activity, CheckOutActivity::class.java)
+            activity?.startActivity(intent)
+        }
     }
 
     override fun onResume() {

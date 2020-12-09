@@ -21,7 +21,7 @@ class HistoryAdapter(var transactions: ArrayList<Transaction>, val fragment: His
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
         holder.v.history_invoice.text = transactions[position].no_invoice
         if (transactions[position].tipe == "pay") {
-            holder.v.history_type.text = "PAID ORDER"
+            holder.v.history_type.text = "PAID"
             holder.v.history_grandTot.setTextColor(Color.RED)
             holder.v.history_grandTot.text = "(-) Rp " + NumberFormat.getInstance().format(transactions[position].grandtot)
         } else {
