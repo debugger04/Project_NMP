@@ -1,5 +1,6 @@
 package id.ac.ubaya.infor.shoppa
 
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import java.text.NumberFormat
 class HistoryAdapter(var transactions: ArrayList<Transaction>, val fragment: HistoryFragment):
     RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
     class HistoryViewHolder(var v: View, val fragment: HistoryFragment):RecyclerView.ViewHolder(v)
+    val NO_INVOICE = ""
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -31,6 +33,12 @@ class HistoryAdapter(var transactions: ArrayList<Transaction>, val fragment: His
             holder.v.btnViewDetailOrder.visibility = View.INVISIBLE
         }
         holder.v.history_date.text = transactions[position].tanggal.substring(0,10)
+
+        holder.v.btnViewDetailOrder.setOnClickListener {
+            val intent = Intent(this.fragment.context, DetailHistoryActivity::class.java)
+            intent.putExtra(NO_INVOICE, transactions[position].no_invoice)
+            this.fragment.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -60,7 +60,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="3dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Deskripsi singkat barang"
+                android:text="Harga Barang"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/imgCardView"
@@ -95,7 +95,7 @@
             <ImageView
                 android:id="@+id/imgCardView"
                 android:layout_width="125dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -14,19 +14,19 @@
         android:layout_marginBottom="24dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="Total"
-        android:textSize="16sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/txtGrandTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:fontFamily="@font/montserrat"
         android:text="jumlah"
-        android:textSize="16sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -53,7 +53,7 @@
         app:titleTextAppearance="@style/toolbar" />
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/txtNomorInvoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbarDetailHistory" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/txtTglTransaksi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -74,10 +74,10 @@
         android:text="TANGGAL"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNomorInvoice" />
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/txtJumlahItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -100,6 +100,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="671dp" />
+        app:layout_constraintGuide_begin="650dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
