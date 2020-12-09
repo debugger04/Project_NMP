@@ -40,7 +40,8 @@ class DetailActivity : AppCompatActivity() {
                             prodObj.getInt("harga"),
                             prodObj.getString("deskripsi"),
                             prodObj.getInt("likes"),
-                            prodObj.getString("image")
+                            prodObj.getString("image"),
+                            0
                         )
                         Picasso.get().load(produk.image).into(imageView)
                         txtNamaProduk.text = produk.nama

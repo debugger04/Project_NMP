@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="112dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginBottom="6dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,12 +25,10 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/txtSubtotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginBottom="6dp"
-                android:background="@drawable/radius"
+                android:background="@drawable/radius2"
                 android:fontFamily="@font/montserrat_bold"
                 android:paddingStart="12dp"
                 android:paddingTop="3dp"
@@ -39,10 +38,10 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView5" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/txtNamaBarang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -51,11 +50,11 @@
                 android:text="Nama Barang"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintStart_toEndOf="@+id/imgCardView"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView24"
+                android:id="@+id/txtDeskripsi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -64,24 +63,37 @@
                 android:text="Deskripsi singkat barang"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                app:layout_constraintStart_toEndOf="@+id/imgCardView"
+                app:layout_constraintTop_toBottomOf="@+id/txtNamaBarang" />
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="6dp"
                 android:layout_marginBottom="6dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="10"
+                android:fontFamily="@font/montserrat"
+                android:text="Subtotal :"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button5" />
+                app:layout_constraintEnd_toStartOf="@+id/txtSubtotal" />
+
+            <TextView
+                android:id="@+id/txtJmlItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="x 10"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/imgCardView"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -89,52 +101,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
-
-            <Button
-                android:id="@+id/button5"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="6dp"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:padding="0dp"
-                android:paddingStart="0dp"
-                android:paddingLeft="0dp"
-                android:paddingTop="0dp"
-                android:paddingEnd="0dp"
-                android:paddingRight="0dp"
-                android:paddingBottom="0dp"
-                android:text="+"
-                app:cornerRadius="25dp"
-                app:iconPadding="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:strokeColor="@color/black" />
-
-            <Button
-                android:id="@+id/button7"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="6dp"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:padding="0dp"
-                android:paddingStart="0dp"
-                android:paddingLeft="0dp"
-                android:paddingTop="0dp"
-                android:paddingEnd="0dp"
-                android:paddingRight="0dp"
-                android:paddingBottom="0dp"
-                android:text="-"
-                app:cornerRadius="25dp"
-                app:iconPadding="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView26"
-                app:strokeColor="@color/black" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

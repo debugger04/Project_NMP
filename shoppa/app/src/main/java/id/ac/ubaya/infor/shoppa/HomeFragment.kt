@@ -84,7 +84,8 @@ class HomeFragment : Fragment() {
                             prodObj.getInt("harga"),
                             prodObj.getString("deskripsi"),
                             prodObj.getInt("likes"),
-                            prodObj.getString("image")
+                            prodObj.getString("image"),
+                            0
                         )
                         products.add(produk)
                     }
