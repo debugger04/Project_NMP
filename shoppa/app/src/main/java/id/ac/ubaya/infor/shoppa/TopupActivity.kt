@@ -34,6 +34,7 @@ class TopupActivity : AppCompatActivity() {
                     val obj = JSONObject(it)
                     if(obj.getString("result") == "OK") {
                         Toast.makeText(this, "Top up has been successfully done !", Toast.LENGTH_SHORT).show()
+                        finish()
                     }
                 },
                 Response.ErrorListener {
