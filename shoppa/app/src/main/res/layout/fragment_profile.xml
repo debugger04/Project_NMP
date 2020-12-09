@@ -103,59 +103,41 @@
                 android:layout_height="match_parent">
 
                 <ImageButton
-                    android:id="@+id/btnHistory"
-                    android:layout_width="150dp"
+                    android:id="@+id/btnSettings"
+                    android:layout_width="120dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="24dp"
                     android:background="#FFFFFF"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/history"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                    android:src="@drawable/settings"
+                    app:layout_constraintEnd_toStartOf="@+id/btnTopUp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/btnSettings"
-                    android:layout_width="150dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="12dp"
-                    android:background="#FFFFFF"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/settings"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnHistory" />
-
-                <ImageButton
                     android:id="@+id/btnTopUp"
-                    android:layout_width="150dp"
+                    android:layout_width="120dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="24dp"
                     android:background="#FFFFFF"
                     android:scaleType="fitCenter"
                     android:src="@drawable/topup"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintStart_toEndOf="@+id/btnSettings"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
                     android:id="@+id/btnLogout"
-                    android:layout_width="150dp"
+                    android:layout_width="120dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="24dp"
                     android:background="#FFFFFF"
                     android:scaleType="fitCenter"
                     android:src="@drawable/logout"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btnTopUp" />
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_begin="205dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>

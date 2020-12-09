@@ -49,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
                         editor.apply()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
+                        finish()
                     } else {
                         val snackBar = Snackbar.make(this.btnSignIn,
                             "Your username or password is incorrect ! Please check again :)",

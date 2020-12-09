@@ -51,6 +51,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView9">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/new_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
@@ -59,7 +60,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnChangeUsername"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -118,6 +119,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/new_pass_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat" />
@@ -139,13 +141,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/new_pass_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/btnChangePass"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -175,6 +178,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView17">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/old_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat" />

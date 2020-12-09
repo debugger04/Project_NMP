@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -40,7 +42,48 @@ class ProfileFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        onResume()
+    }
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_profile, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btnTopUp.setOnClickListener{
+            val intent = Intent(activity, TopupActivity::class.java)
+            activity?.startActivity(intent)
+        }
+
+        btnSettings.setOnClickListener{
+            val intent = Intent(activity, SettingsActivity::class.java)
+            activity?.startActivity(intent)
+        }
+
+        btnLogout.setOnClickListener {
+            AlertDialog.Builder(activity!!).apply{
+                setMessage("Do you really want to logout?")
+                setPositiveButton("Logout") { _, _ ->
+                    var sharedFile = "id.ac.ubaya.infor.shoppa"
+                    var shared:SharedPreferences = activity!!.getSharedPreferences(sharedFile, Context.MODE_PRIVATE )
+                    var editor:SharedPreferences.Editor = shared.edit()
+                    editor.putInt(USER_ID, 0)
+                    editor.apply()
+                    val intent = Intent(activity, LoginActivity::class.java)
+                    activity?.startActivity(intent)
+                    activity?.finish()
+                }
+                setNegativeButton("Cancel", null)
+                create().show()
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
         val q = Volley.newRequestQueue(activity)
         val url = "http://10.0.2.2/nmp160418083/select_profile.php"
         val stringRequest = object: StringRequest(
@@ -76,25 +119,6 @@ class ProfileFragment : Fragment() {
             }
         }
         q.add(stringRequest)
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        btnTopUp.setOnClickListener{
-            val intent = Intent(activity, TopupActivity::class.java)
-            activity?.startActivity(intent)
-        }
-
-        btnSettings.setOnClickListener{
-            val intent = Intent(activity, SettingsActivity::class.java)
-            activity?.startActivity(intent)
-        }
     }
 
     companion object {
