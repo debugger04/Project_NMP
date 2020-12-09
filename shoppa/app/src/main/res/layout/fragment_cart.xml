@@ -36,11 +36,11 @@
             android:id="@+id/jmlItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="Jumlah item"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,7 +64,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="Total"
-            android:textSize="16sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/btnCheckout"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -76,7 +76,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/montserrat"
             android:text="jumlah"
-            android:textSize="16sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/btnCheckout"
             app:layout_constraintEnd_toEndOf="parent" />
 
