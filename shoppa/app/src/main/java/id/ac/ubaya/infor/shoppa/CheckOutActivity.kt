@@ -73,8 +73,6 @@ class CheckOutActivity : AppCompatActivity() {
                         var trans = supportFragmentManager.beginTransaction()
                         var checkoutFragment:DoneCheckoutFragment = DoneCheckoutFragment.newInstance()
                         checkoutFragment.show(trans, "dialog")
-//                        Toast.makeText(this, "Transaction has been done !", Toast.LENGTH_SHORT).show()
-//                        finish()
                     } else {
                         Toast.makeText(this, "Your e-money amount is not enough ! Please top up first.", Toast.LENGTH_SHORT).show()
                     }
