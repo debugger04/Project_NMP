@@ -58,7 +58,7 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btnCheckout.setOnClickListener {
             val q = Volley.newRequestQueue(activity)
-            val url = "http://10.0.2.2/nmp160418083/check_cart.php"
+            val url = "http://ubaya.prototipe.net/nmp160418083/check_cart.php"
             val stringRequest = object: StringRequest(
                 Request.Method.POST, url,
                 Response.Listener {
@@ -91,7 +91,7 @@ class CartFragment : Fragment() {
 //        Toast.makeText(activity, "TEST", Toast.LENGTH_SHORT).show()
         products.clear()
         val q = Volley.newRequestQueue(activity)
-        val url = "http://10.0.2.2/nmp160418083/select_cart.php"
+        val url = "http://ubaya.prototipe.net/nmp160418083/select_cart.php"
         val stringRequest = object: StringRequest(
             Request.Method.POST, url,
             Response.Listener {

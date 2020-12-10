@@ -39,7 +39,7 @@ class SignUpActivity : AppCompatActivity() {
             if (inUsername != "" && inEmail != "" && inPass1 != "" && inPass2 != "") {
                 if (inPass1 == inPass2) {
                     val q = Volley.newRequestQueue(this)
-                    val url = "http://10.0.2.2/nmp160418083/register.php"
+                    val url = "http://ubaya.prototipe.net/nmp160418083/register.php"
                     val stringRequest = object: StringRequest(
                         Request.Method.POST, url,
                         Response.Listener {

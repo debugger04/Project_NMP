@@ -41,7 +41,7 @@ class CategoryProductAdapter(val products:ArrayList<Product>, val ctx:Context)
 
         holder.v.btnAddToCart.setOnClickListener {
             val q = Volley.newRequestQueue(ctx)
-            val url = "http://10.0.2.2/nmp160418083/add_to_cart.php"
+            val url = "http://ubaya.prototipe.net/nmp160418083/add_to_cart.php"
             val stringRequest = object: StringRequest(
                 Request.Method.POST, url,
                 Response.Listener {

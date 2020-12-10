@@ -26,7 +26,7 @@ class CategoryProductActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val q = Volley.newRequestQueue(this)
-        val url = "http://10.0.2.2/nmp160418083/select_product_with_category.php"
+        val url = "http://ubaya.prototipe.net/nmp160418083/select_product_with_category.php"
         val stringRequest = object: StringRequest(
             Request.Method.POST, url,
             Response.Listener {

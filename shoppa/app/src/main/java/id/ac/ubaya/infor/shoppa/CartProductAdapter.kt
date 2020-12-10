@@ -40,7 +40,7 @@ class CartProductAdapter(var products: ArrayList<Product>, val fragment: CartFra
 
         holder.v.btnPlusItem.setOnClickListener {
             val q = Volley.newRequestQueue(fragment.context)
-            val url = "http://10.0.2.2/nmp160418083/cart_add_product.php"
+            val url = "http://ubaya.prototipe.net/nmp160418083/cart_add_product.php"
             val stringRequest = object: StringRequest(
                 Request.Method.POST, url,
                 Response.Listener {
@@ -76,7 +76,7 @@ class CartProductAdapter(var products: ArrayList<Product>, val fragment: CartFra
 
         holder.v.btnMinusItem.setOnClickListener {
             val q = Volley.newRequestQueue(fragment.context)
-            val url = "http://10.0.2.2/nmp160418083/cart_minus_product.php"
+            val url = "http://ubaya.prototipe.net/nmp160418083/cart_minus_product.php"
             val stringRequest = object: StringRequest(
                 Request.Method.POST, url,
                 Response.Listener {
@@ -94,7 +94,7 @@ class CartProductAdapter(var products: ArrayList<Product>, val fragment: CartFra
                         }
                         if (products[position].qty == 0) {
                             val q2 = Volley.newRequestQueue(fragment.context)
-                            val url2 = "http://10.0.2.2/nmp160418083/delete_product_cart.php"
+                            val url2 = "http://ubaya.prototipe.net/nmp160418083/delete_product_cart.php"
                             val stringRequest2 = object: StringRequest(
                                 Request.Method.POST, url2,
                                 Response.Listener {
