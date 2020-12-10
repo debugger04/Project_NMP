@@ -94,7 +94,7 @@ class CartProductAdapter(var products: ArrayList<Product>, val fragment: CartFra
                             val q2 = Volley.newRequestQueue(fragment.context)
                             val url2 = "http://10.0.2.2/nmp160418083/delete_product_cart.php"
                             val stringRequest2 = object: StringRequest(
-                                Request.Method.POST, url,
+                                Request.Method.POST, url2,
                                 Response.Listener {
                                     val obj = JSONObject(it)
                                     if(obj.getString("result") == "OK") {
