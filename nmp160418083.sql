@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2020 at 05:54 PM
+-- Generation Time: Dec 10, 2020 at 04:09 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -39,10 +39,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `users_id`, `produk_id`, `qty`) VALUES
-(1, 1, 4, 1),
-(2, 1, 1, 1),
-(3, 1, 3, 1),
-(4, 1, 16, 2);
+(14, 2, 9, 2),
+(16, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -79,6 +77,18 @@ CREATE TABLE `detail` (
   `produk_id` int(11) NOT NULL,
   `qty` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `detail`
+--
+
+INSERT INTO `detail` (`id`, `nota_id`, `produk_id`, `qty`) VALUES
+(1, 'ORD1-09122020-6545', 1, 1),
+(2, 'ORD1-09122020-6545', 8, 1),
+(3, 'ORD1-09122020-8120', 9, 20),
+(4, 'ORD1-09122020-3592', 16, 2),
+(5, 'ORD1-09122020-3592', 6, 2),
+(6, 'ORD1-10122020-2649', 7, 1);
 
 -- --------------------------------------------------------
 
@@ -121,8 +131,15 @@ CREATE TABLE `nota` (
 --
 
 INSERT INTO `nota` (`id`, `tgl_order`, `users_id`, `grandtotal`, `status`) VALUES
-('ORD1-09122020-3142', '2020-12-12 23:23:39', 1, 125000, 'pay'),
-('TOP1-09122020-3142', '2020-12-09 00:00:00', 1, 25000, 'topup');
+('ORD1-09122020-3592', '2020-12-09 21:31:32', 1, 681150, 'pay'),
+('ORD1-09122020-6545', '2020-12-09 20:03:13', 1, 480000, 'pay'),
+('ORD1-09122020-8120', '2020-12-09 20:06:13', 1, 9300000, 'pay'),
+('ORD1-10122020-2649', '2020-12-10 02:44:46', 1, 261250, 'pay'),
+('TOP1-09122020-1035', '2020-12-09 20:06:06', 1, 10000000, 'topup'),
+('TOP1-09122020-3142', '2020-12-09 00:00:00', 1, 25000, 'topup'),
+('TOP1-09122020-9690', '2020-12-09 19:56:21', 1, 2000000, 'topup'),
+('TOP1-10122020-1278', '2020-12-10 02:44:37', 1, 500000, 'topup'),
+('TOP2-10122020-7285', '2020-12-10 02:46:21', 2, 700000, 'topup');
 
 -- --------------------------------------------------------
 
@@ -184,8 +201,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `username`, `password`, `saldo`, `poin`, `image`, `member_id`) VALUES
-(1, 'anasthasyaaverina@gmail.com', 'peyine', '8cb2237d0679ca88db6464eac60da96345513964', 85000, 0, 'https://scontent.fsub8-1.fna.fbcdn.net/v/t1.0-9/71797330_2318805378385489_280040723921764352_o.jpg?_nc_cat=108&ccb=2&_nc_sid=174925&_nc_ohc=fVH0ZOXo3GwAX-WBDja&_nc_ht=scontent.fsub8-1.fna&oh=f1f01a88637cd505609cf4fd5a4cf977&oe=5FF3D3DE', 1),
-(2, 'williamhartanto@gmail.com', 'wihar', '348162101fc6f7e624681b7400b085eeac6df7bd', 0, 0, 'https://scontent.fsub8-1.fna.fbcdn.net/v/t1.0-9/536717_448422605168024_1708997096_n.jpg?_nc_cat=109&ccb=2&_nc_sid=174925&_nc_ohc=gyfMKN-QF2gAX_nev03&_nc_ht=scontent.fsub8-1.fna&oh=8c7988a668fac4cd3d463f19f98db1d4&oe=5FF53B40', 1),
+(1, 'anasthasyaaverina@gmail.com', 'peyine', '8cb2237d0679ca88db6464eac60da96345513964', 400600, 992, 'https://scontent.fsub8-1.fna.fbcdn.net/v/t1.0-9/71797330_2318805378385489_280040723921764352_o.jpg?_nc_cat=108&ccb=2&_nc_sid=174925&_nc_ohc=fVH0ZOXo3GwAX-WBDja&_nc_ht=scontent.fsub8-1.fna&oh=f1f01a88637cd505609cf4fd5a4cf977&oe=5FF3D3DE', 2),
+(2, 'williamhartanto@gmail.com', 'wihar', '348162101fc6f7e624681b7400b085eeac6df7bd', 700000, 0, 'https://scontent.fsub8-1.fna.fbcdn.net/v/t1.0-9/536717_448422605168024_1708997096_n.jpg?_nc_cat=109&ccb=2&_nc_sid=174925&_nc_ohc=gyfMKN-QF2gAX_nev03&_nc_ht=scontent.fsub8-1.fna&oh=8c7988a668fac4cd3d463f19f98db1d4&oe=5FF53B40', 1),
 (3, 'matthewnoto@gmail.com', 'matthew', 'b1b3773a05c0ed0176787a4f1574ff0075f7521e', 0, 0, 'https://rimatour.com/wp-content/uploads/2017/09/No-image-found.jpg', 1);
 
 --
@@ -249,7 +266,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -261,7 +278,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `detail`
 --
 ALTER TABLE `detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `member`
