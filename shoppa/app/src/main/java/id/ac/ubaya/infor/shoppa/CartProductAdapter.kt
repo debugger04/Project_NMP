@@ -90,6 +90,33 @@ class CartProductAdapter(var products: ArrayList<Product>, val fragment: CartFra
                             val dataObj = data.getJSONObject(i)
                             fragment.jmlHarga.text = "Rp " + NumberFormat.getInstance().format(dataObj.getInt("grand_total"))
                         }
+                        if (products[position].qty == 0) {
+                            val q2 = Volley.newRequestQueue(fragment.context)
+                            val url2 = "http://10.0.2.2/nmp160418083/delete_product_cart.php"
+                            val stringRequest2 = object: StringRequest(
+                                Request.Method.POST, url,
+                                Response.Listener {
+                                    val obj = JSONObject(it)
+                                    if(obj.getString("result") == "OK") {
+                                        products.removeAt(position)
+                                        this.notifyDataSetChanged()
+                                    }
+                                },
+                                Response.ErrorListener {
+                                    Log.d("cekparams", it.message.toString()) }
+                            )
+                            {
+                                override fun getParams(): MutableMap<String, String> {
+                                    val params = HashMap<String, String>()
+                                    var sharedFile = "id.ac.ubaya.infor.shoppa"
+                                    var shared: SharedPreferences = fragment.context!!.getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+                                    params["id_user"] = shared.getInt(USER_ID, 0).toString()
+                                    params["id_prod"] = products[position].id.toString()
+                                    return params
+                                }
+                            }
+                            q2.add(stringRequest2)
+                        }
                     }
                 },
                 Response.ErrorListener {

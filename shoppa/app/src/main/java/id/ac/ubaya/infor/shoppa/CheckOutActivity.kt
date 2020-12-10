@@ -71,7 +71,7 @@ class CheckOutActivity : AppCompatActivity() {
                     val obj = JSONObject(it)
                     if(obj.getString("result") == "OK") {
                         Toast.makeText(this, "Transaction has been done !", Toast.LENGTH_SHORT).show()
-//                        finish()
+                        finish()
                     } else {
                         Toast.makeText(this, "Your e-money amount is not enough ! Please top up first.", Toast.LENGTH_SHORT).show()
                     }
