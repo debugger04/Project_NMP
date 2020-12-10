@@ -1,6 +1,6 @@
 <?php
 	error_reporting(E_ERROR | E_PARSE);
-	$c = new mysqli("localhost", "root", "", "nmp160418083");
+	$c = new mysqli("localhost", "nmp160418083", "ubaya", "nmp160418083");
 	if($c->connect_errno) {
 		echo json_encode(array('result'=> 'ERROR', 'message' => 'Failed to connect DB'));
 		die();
@@ -18,7 +18,11 @@
 			die();
 		}
 		else {
-			$sql = "INSERT INTO users VALUES (NULL, '".$email."', '".$username."', '".$pass."', 0, 0, 'https://rimatour.com/wp-content/uploads/2017/09/No-image-found.jpg', 1)";
+			if ($_POST['img'] != "") {
+				$sql = "INSERT INTO users VALUES (NULL, '".$email."', '".$username."', '".$pass."', 0, 0, '".$_POST['img']."', 1)";
+			} else {
+				$sql = "INSERT INTO users VALUES (NULL, '".$email."', '".$username."', '".$pass."', 0, 0, 'https://rimatour.com/wp-content/uploads/2017/09/No-image-found.jpg', 1)";
+			}
 			$c->query($sql);
 			echo json_encode(array('result'=> 'OK'));
 		}

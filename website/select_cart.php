@@ -1,6 +1,6 @@
 <?php
 	error_reporting(E_ERROR | E_PARSE);
-	$c = new mysqli("localhost", "root", "", "nmp160418083");
+	$c = new mysqli("localhost", "nmp160418083", "ubaya", "nmp160418083");
 	if($c->connect_errno) {
 		echo json_encode(array('result'=> 'ERROR', 'message' => 'Failed to connect DB'));
 		die();
@@ -13,7 +13,7 @@
 			$array[] = $obj;
 		}
 
-		$sql = "SELECT ifnull(count(c.id), 0) as jml_barang, ifnull(sum(p.harga * c.qty), 0) as grand_total FROM cart c inner join produk p on p.id = c.produk_id where c.users_id = ".$_POST['id_user'];
+		$sql = "SELECT ifnull(sum(c.qty), 0) as jml_barang, ifnull(sum(p.harga * c.qty), 0) as grand_total FROM cart c inner join produk p on p.id = c.produk_id where c.users_id = ".$_POST['id_user'];
 		$result = $c->query($sql);
 		$arr_data = array();
 		while ($obj = $result->fetch_object()) {

@@ -1,13 +1,15 @@
 <?php
 	error_reporting(E_ERROR | E_PARSE);
-	$c = new mysqli("localhost", "root", "", "nmp160418083");
+	$c = new mysqli("localhost", "nmp160418083", "ubaya", "nmp160418083");
 	if($c->connect_errno) {
 		echo json_encode(array('result'=> 'ERROR', 'message' => 'Failed to connect DB'));
 		die();
 	}
-	if ($_POST["id_user"]) {
-		$id = $_POST["id_user"];
-		$sql = "SELECT username, saldo, poin, image, jenis, ifnull((select count(id) from nota where u.id = users_id and status = 'pay' group by users_id),0) as checkout FROM users u inner join member m on u.member_id = m.id where u.id = ".$id;
+	if ($_POST['username']) {
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$pass = sha1($password);
+		$sql = "SELECT * FROM users where username = '".$username."' and password = '".$pass."'";
 		$result = $c->query($sql);
 		if ($result->num_rows > 0) {
 			while ($obj = $result->fetch_object()) {
@@ -20,7 +22,7 @@
 			die();
 		}
 	} else {
-		echo json_encode(array('result'=> 'ERROR', 'message' => 'ID User is not found'));
+		echo json_encode(array('result'=> 'ERROR', 'message' => 'No Username is found'));
 		die();
 	}
 ?>
