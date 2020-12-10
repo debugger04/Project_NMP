@@ -37,6 +37,8 @@ class SettingsActivity : AppCompatActivity() {
                         if(obj.getString("result") == "OK") {
                             Toast.makeText(this, "Username has been successfully changed", Toast.LENGTH_SHORT).show()
                             finish()
+                        } else {
+                            Toast.makeText(this, "This username is not available", Toast.LENGTH_SHORT).show()
                         }
                     },
                     Response.ErrorListener {

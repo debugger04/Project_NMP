@@ -19,6 +19,31 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbarSignUp" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/white"
+        app:boxBackgroundColor="@null"
+        app:boxBackgroundMode="outline"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Profile Picture URL (optional)"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
@@ -110,18 +135,18 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="56dp"
-        android:text="by creating an account you agree to our Terms of Service and Privacy Policy"
+        android:text="By creating an account you agree to our Terms of Service and Privacy Policy"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
 
     <Button
         android:id="@+id/btnSignupNow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/montserrat"
         android:text="Sign Up"
