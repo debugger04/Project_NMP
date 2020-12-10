@@ -28,6 +28,7 @@ class SignUpActivity : AppCompatActivity() {
             var inEmail = inputEmail.text.toString()
             var inPass1 = inputPass1.text.toString()
             var inPass2 = inputPass2.text.toString()
+            var inUrl = inputURL.text.toString()
 
             var snackBar = Snackbar.make(this.btnSignupNow, "", Snackbar.LENGTH_SHORT).setAction("Action", null)
             snackBar.setActionTextColor(Color.WHITE)
@@ -39,7 +40,7 @@ class SignUpActivity : AppCompatActivity() {
             if (inUsername != "" && inEmail != "" && inPass1 != "" && inPass2 != "") {
                 if (inPass1 == inPass2) {
                     val q = Volley.newRequestQueue(this)
-                    val url = "http://10.0.2.2/nmp160418083/register.php"
+                    val url = "http://ubaya.prototipe.net/nmp160418083/register.php"
                     val stringRequest = object: StringRequest(
                         Request.Method.POST, url,
                         Response.Listener {
@@ -62,6 +63,7 @@ class SignUpActivity : AppCompatActivity() {
                             params["username"] = inputUsername.text.toString()
                             params["email"] = inputEmail.text.toString()
                             params["password"] = inputPass1.text.toString()
+                            params["img"] = inUrl
                             return params
                         }
                     }

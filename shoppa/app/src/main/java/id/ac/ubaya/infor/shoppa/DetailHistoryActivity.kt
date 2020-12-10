@@ -33,7 +33,7 @@ class DetailHistoryActivity : AppCompatActivity() {
         no_invoice = intent.getStringExtra(NO_INVOICE).toString()
 
         val q = Volley.newRequestQueue(this)
-        val url = "http://10.0.2.2/nmp160418083/select_nota_detail.php"
+        val url = "http://ubaya.prototipe.net/nmp160418083/select_nota_detail.php"
         val stringRequest = object: StringRequest(
             Request.Method.POST, url,
             Response.Listener {

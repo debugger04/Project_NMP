@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
         val q1 = Volley.newRequestQueue(activity)
-        val url1 = "http://10.0.2.2/nmp160418083/select_category.php"
+        val url1 = "http://ubaya.prototipe.net/nmp160418083/select_category.php"
         var stringRequest1 = StringRequest(
             Request.Method.POST, url1,
             Response.Listener<String> {
@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
         q1.add(stringRequest1)
 
         val q2 = Volley.newRequestQueue(activity)
-        val url2 = "http://10.0.2.2/nmp160418083/select_product.php"
+        val url2 = "http://ubaya.prototipe.net/nmp160418083/select_product.php"
         var stringRequest2 = StringRequest(
             Request.Method.POST, url2,
             Response.Listener<String> {

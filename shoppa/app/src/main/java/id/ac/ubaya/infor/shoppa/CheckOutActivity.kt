@@ -28,7 +28,7 @@ class CheckOutActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val q = Volley.newRequestQueue(this)
-        val url = "http://10.0.2.2/nmp160418083/select_before_checkout.php"
+        val url = "http://ubaya.prototipe.net/nmp160418083/select_before_checkout.php"
         val stringRequest = object: StringRequest(
             Request.Method.POST, url,
             Response.Listener {
@@ -64,14 +64,15 @@ class CheckOutActivity : AppCompatActivity() {
 
         btnPay.setOnClickListener {
             val q = Volley.newRequestQueue(this)
-            val url = "http://10.0.2.2/nmp160418083/checkout.php"
+            val url = "http://ubaya.prototipe.net/nmp160418083/checkout.php"
             val stringRequest = object: StringRequest(
                 Request.Method.POST, url,
                 Response.Listener {
                     val obj = JSONObject(it)
                     if(obj.getString("result") == "OK") {
-                        Toast.makeText(this, "Transaction has been done !", Toast.LENGTH_SHORT).show()
-                        finish()
+                        var trans = supportFragmentManager.beginTransaction()
+                        var checkoutFragment:DoneCheckoutFragment = DoneCheckoutFragment.newInstance()
+                        checkoutFragment.show(trans, "dialog")
                     } else {
                         Toast.makeText(this, "Your e-money amount is not enough ! Please top up first.", Toast.LENGTH_SHORT).show()
                     }

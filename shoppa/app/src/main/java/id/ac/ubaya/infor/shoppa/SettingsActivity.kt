@@ -29,7 +29,7 @@ class SettingsActivity : AppCompatActivity() {
         btnChangeUsername.setOnClickListener {
             if (new_username.text.toString() != "") {
                 val q = Volley.newRequestQueue(this)
-                val url = "http://10.0.2.2/nmp160418083/update_username.php"
+                val url = "http://ubaya.prototipe.net/nmp160418083/update_username.php"
                 val stringRequest = object: StringRequest(
                     Request.Method.POST, url,
                     Response.Listener {
@@ -37,6 +37,8 @@ class SettingsActivity : AppCompatActivity() {
                         if(obj.getString("result") == "OK") {
                             Toast.makeText(this, "Username has been successfully changed", Toast.LENGTH_SHORT).show()
                             finish()
+                        } else {
+                            Toast.makeText(this, "This username is not available", Toast.LENGTH_SHORT).show()
                         }
                     },
                     Response.ErrorListener {
@@ -62,7 +64,7 @@ class SettingsActivity : AppCompatActivity() {
             if (new_pass_1.text.toString() != "" && new_pass_2.text.toString() != "") {
                 if (new_pass_1.text.toString() == new_pass_2.text.toString()) {
                     val q = Volley.newRequestQueue(this)
-                    val url = "http://10.0.2.2/nmp160418083/update_password.php"
+                    val url = "http://ubaya.prototipe.net/nmp160418083/update_password.php"
                     val stringRequest = object: StringRequest(
                         Request.Method.POST, url,
                         Response.Listener {

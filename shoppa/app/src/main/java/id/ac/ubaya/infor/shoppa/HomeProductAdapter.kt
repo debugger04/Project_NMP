@@ -43,7 +43,7 @@ class HomeProductAdapter(var products: ArrayList<Product>, val fragment: HomeFra
 
         holder.v.btnAddToCart.setOnClickListener {
             val q = Volley.newRequestQueue(fragment.context)
-            val url = "http://10.0.2.2/nmp160418083/add_to_cart.php"
+            val url = "http://ubaya.prototipe.net/nmp160418083/add_to_cart.php"
             val stringRequest = object: StringRequest(
                 Request.Method.POST, url,
                 Response.Listener {
