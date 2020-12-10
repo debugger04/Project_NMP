@@ -57,8 +57,32 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnCheckout.setOnClickListener {
-            val intent = Intent(activity, CheckOutActivity::class.java)
-            activity?.startActivity(intent)
+            val q = Volley.newRequestQueue(activity)
+            val url = "http://10.0.2.2/nmp160418083/check_cart.php"
+            val stringRequest = object: StringRequest(
+                Request.Method.POST, url,
+                Response.Listener {
+                    val obj = JSONObject(it)
+                    if(obj.getString("result") == "OK") {
+                        val intent = Intent(activity, CheckOutActivity::class.java)
+                        activity?.startActivity(intent)
+                    } else {
+                        Toast.makeText(activity, "Your cart is still empty...", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                Response.ErrorListener {
+                    Log.d("cekparams", it.message.toString()) }
+            )
+            {
+                override fun getParams(): MutableMap<String, String> {
+                    val params = HashMap<String, String>()
+                    var sharedFile = "id.ac.ubaya.infor.shoppa"
+                    var shared: SharedPreferences = activity!!.getSharedPreferences(sharedFile, Context.MODE_PRIVATE)
+                    params["id_user"] = shared.getInt(USER_ID, 0).toString()
+                    return params
+                }
+            }
+            q.add(stringRequest)
         }
     }
 

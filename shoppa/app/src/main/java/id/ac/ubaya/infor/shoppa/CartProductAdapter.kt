@@ -54,6 +54,7 @@ class CartProductAdapter(var products: ArrayList<Product>, val fragment: CartFra
                         for(i in 0 until data.length()) {
                             val dataObj = data.getJSONObject(i)
                             fragment.jmlHarga.text = "Rp " + NumberFormat.getInstance().format(dataObj.getInt("grand_total"))
+                            fragment.jmlItem.text = "Jumlah Item : " + dataObj.getInt("qty")
                         }
                     }
                 },
@@ -89,6 +90,7 @@ class CartProductAdapter(var products: ArrayList<Product>, val fragment: CartFra
                         for(i in 0 until data.length()) {
                             val dataObj = data.getJSONObject(i)
                             fragment.jmlHarga.text = "Rp " + NumberFormat.getInstance().format(dataObj.getInt("grand_total"))
+                            fragment.jmlItem.text = "Jumlah Item : " + dataObj.getInt("qty")
                         }
                         if (products[position].qty == 0) {
                             val q2 = Volley.newRequestQueue(fragment.context)

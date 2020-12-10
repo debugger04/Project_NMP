@@ -39,7 +39,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Jumlah item"
+            android:text="Jumlah Item : 0"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -75,7 +75,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/montserrat"
-            android:text="jumlah"
+            android:text="Rp 0"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/btnCheckout"
             app:layout_constraintEnd_toEndOf="parent" />
