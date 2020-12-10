@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -63,6 +64,7 @@ class CartFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+//        Toast.makeText(activity, "TEST", Toast.LENGTH_SHORT).show()
         products.clear()
         val q = Volley.newRequestQueue(activity)
         val url = "http://10.0.2.2/nmp160418083/select_cart.php"
