@@ -45,7 +45,9 @@ class DoneCheckoutFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonOK.setOnClickListener {
-            activity?.finish()
+            val cart = CartFragment()
+            cart.onResume()
+//            activity?.finish()
         }
     }
 
